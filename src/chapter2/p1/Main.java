@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Package :: chapter2.p1
+ * Package :: chapter2.chapter1.p1
  * Developer :: Ahn Seong-jin
  * Date :: 2021/11/30
  * Description ::
