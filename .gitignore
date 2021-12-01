@@ -19,6 +19,7 @@ bin/
 
 ### IntelliJ IDEA ###
 /logs/**
+/out/**
 .idea
 *.iws
 *.iml
