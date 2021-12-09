@@ -44,21 +44,18 @@ public class Main {
                 rowSum += arr[i][j];
                 colSum += arr[j][i];
             }
-            max = max < rowSum ? rowSum : max;
-            max = max < colSum ? colSum : max;
+            max = Math.max(max, rowSum);
+            max = Math.max(max, colSum);
         }
 
         int leftCrossSum = 0;
-        for (int i = 0; i < n; i++) {
-            leftCrossSum += arr[i][i];
-        }
-        max = max < leftCrossSum ? leftCrossSum : max;
-
         int rightCrossSum = 0;
         for (int i = 0; i < n; i++) {
+            leftCrossSum += arr[i][i];
             rightCrossSum += arr[i][n-1-i];
         }
-        max = max < rightCrossSum ? rightCrossSum : max;
+        max = Math.max(max, leftCrossSum);
+        max = Math.max(max, rightCrossSum);
 
         return max;
     }
