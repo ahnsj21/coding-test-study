@@ -4,11 +4,22 @@ import java.util.Scanner;
 
 public class Main {
 
+    public String solve(String str) {
+        String result = "";
+        char[] chars = str.toCharArray();
+        for (char c : chars) {
+            if (result.indexOf(c) == -1) {
+                result += c;
+            }
+        }
+        return result;
+    }
     public static void main(String[] args) {
         Main main = new Main();
         Scanner in = new Scanner(System.in);
         String str = in.next();
-        String result = main.solution2(str);
+//        String result = main.solution2(str);
+        String result = main.solve(str);
         System.out.println(result);
     }
 

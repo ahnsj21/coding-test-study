@@ -33,11 +33,24 @@ public class Main {
         return answer;
     }
 
+    public String solve(String str) {
+        String result = "";
+
+        String[] strArr = str.split(" ");
+        for (String word : strArr) {
+            if (word.length() > result.length()) {
+                result = word;
+            }
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         Main T = new Main();
         Scanner kb = new Scanner(System.in);
         String str = kb.nextLine();
 
-        System.out.print(T.solution2(str));
+//        System.out.print(T.solution2(str));
+        System.out.print(T.solve(str));
     }
 }

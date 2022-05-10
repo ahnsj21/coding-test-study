@@ -4,10 +4,23 @@ import java.util.Scanner;
 
 public class Main {
 
+    public String solve(String str) {
+        str = str.toLowerCase();
+
+//        char[] chars = str.toCharArray();
+//        for (int i=(chars.length-1); i>=0; i--) {
+//
+//        }
+        String reverseStr = new StringBuffer(str).reverse().toString();
+        return str.equals(reverseStr) ? "YES" : "NO";
+
+    }
+
     public static void main(String[] args) {
         Main main = new Main();
         Scanner kb = new Scanner(System.in);
-        System.out.println(main.solution3(kb.nextLine()));
+//        System.out.println(main.solution3(kb.nextLine()));
+        System.out.println(main.solve(kb.nextLine()));
     }
 
     private String solution(String str) {

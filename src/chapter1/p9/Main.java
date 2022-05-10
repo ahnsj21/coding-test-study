@@ -1,13 +1,29 @@
 package chapter1.p9;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
+    public int solve(String str) {
+        int result = 0;
+        for (int i = 0; i < str.length(); i++) {
+
+            char c = str.charAt(i);
+            if (Character.isDigit(c)) {
+                System.out.println("[" + i + "] c=" + c);
+                result = (result * 10) + Character.getNumericValue(c);
+            }
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         Main main = new Main();
         Scanner kb = new Scanner(System.in);
-        System.out.println(main.solution2(kb.next()));
+//        System.out.println(main.solution2(kb.next()));
+        System.out.println(main.solve(kb.next()));
     }
 
     private int solution1(String str) {

@@ -1,8 +1,23 @@
 package chapter1.p4;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    public String[] solve(String[] strArr) {
+        String[] resultStrArr = new String[strArr.length];
+
+        for (int j=0; j<strArr.length; j++) {
+            String reverseStr = "";
+            char[] charArr = strArr[j].toCharArray();
+            for (int i=charArr.length-1; i>=0; i--) {
+                reverseStr += charArr[i];
+            }
+            resultStrArr[j] = reverseStr;
+        }
+        return resultStrArr;
+    }
+
     public static void main(String[] args) {
         Main T = new Main();
         Scanner kb = new Scanner(System.in);
@@ -12,7 +27,8 @@ public class Main {
             array[i] = kb.next();
         }
 
-        String[] resultList = T.solution2(array);
+//        String[] resultList = T.solution2(array);
+        String[] resultList = T.solve(array);
         for (String str : resultList) {
             System.out.println(str);
         }
@@ -38,4 +54,5 @@ public class Main {
         }
         return resultArray;
     }
+
 }

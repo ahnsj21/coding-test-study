@@ -8,7 +8,8 @@ public class Main {
         Scanner in = new Scanner(System.in);
         String str = in.next();
 
-        String result = new Main().solution(str);
+//        String result = new Main().solution(str);
+        String result = new Main().solve(str);
         System.out.println(result);
     }
 
@@ -35,5 +36,26 @@ public class Main {
         }
         result = String.valueOf(chars);
         return result;
+    }
+
+    public String solve(String str) {
+        int frontIdx = 0;
+        int tailIdx = str.length()-1;
+
+        char[] chars = str.toCharArray();
+        while ((tailIdx - frontIdx) > 1) {
+            if (!Character.isAlphabetic(chars[frontIdx])) {
+                frontIdx++;
+            } else if (!Character.isAlphabetic(chars[tailIdx])) {
+                tailIdx--;
+            } else {
+                char temp = chars[frontIdx];
+                chars[frontIdx] = chars[tailIdx];
+                chars[tailIdx] = temp;
+                frontIdx++;
+                tailIdx--;
+            }
+        }
+        return String.valueOf(chars);
     }
 }

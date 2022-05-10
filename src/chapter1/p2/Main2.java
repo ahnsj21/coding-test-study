@@ -30,11 +30,24 @@ public class Main2 {
         return answer;
     }
 
+    public String solve(String str) {
+        String result = "";
+
+        char[] charArr = str.toCharArray();
+        for (char c : charArr) {
+            char changedChar = Character.isLowerCase(c) ?
+                    Character.toUpperCase(c) : Character.toLowerCase(c);
+            result += changedChar;
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         Main2 T = new Main2();
         Scanner kb = new Scanner(System.in);
         String str = kb.next();
 
-        System.out.print(T.solution2(str));
+//        System.out.print(T.solution2(str));
+        System.out.print(T.solve(str));
     }
 }

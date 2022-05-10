@@ -3,17 +3,46 @@ package chapter1.p12;
 import java.util.Scanner;
 
 public class Main {
+    public String solve(String str) {
+        str = str.replaceAll("#", "1")
+                .replaceAll("\\*", "0");
+        System.out.println(str);
+        int[] arr = new int[str.length()/7];
+
+        // 0, 7
+        // 6, 13
+        // 12, 19
+        // 18, 25
+
+
+        // i=0 s : 0,  e : 7
+        // i=1 s : 6,  e : 13
+        // i=2 s : 12, e : 19
+        // i=3 s : 18
+        for (int i = 0; i < arr.length; i++) {
+            String bi = str.substring(i*6, (i+1)*6+1);
+            System.out.println("binary : " + bi);
+            arr[i] = Integer.valueOf(bi, 2);
+            System.out.println("binary to int : " + arr[i]);
+            System.out.println((char) arr[i]);
+        }
+        return str;
+    }
 
     public static void main(String[] args) {
         Main main = new Main();
-        Scanner scanner = new Scanner(System.in);
-        int wordCnt = scanner.nextInt();
-        String encryptStr = scanner.next();
-        int[] resultArr = main.solution2(wordCnt, encryptStr);
-        for (int result : resultArr) {
-            System.out.print((char) result);
-        }
+        main.solve("#****###**#####**#####**##**");
     }
+//    public static void main(String[] args) {
+//        Main main = new Main();
+//        Scanner scanner = new Scanner(System.in);
+//        int wordCnt = scanner.nextInt();
+//        String encryptStr = scanner.next();
+//        int[] resultArr = main.solution2(wordCnt, encryptStr);
+//        for (int result : resultArr) {
+//            System.out.print((char) result);
+//        }
+//    }
 
     private int[] solution1(int wordCnt, String encryptStr) {
         String biNo = encryptStr.replaceAll("#", "1").replaceAll("\\*", "0");
